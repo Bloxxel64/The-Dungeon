@@ -11,17 +11,22 @@ input("Press ENTER to continue...")
 #clear the screen.
 os.system('clear')
 
+#The various splash texts to add a little flavor to the main menu.
 splashtexts = [
   "It's a sad day to be a Goblin.", "Don't you have better things to do?",
   "Enjoy your stay.", "Now how did you end up here of all places?"
 ]
 
-print("Welcome to The Dungeon")
+#Welcome the player.
+print("Welcome to The Dungeon\n")
 print(splashtexts[random.randint(0, 3)])
 
+#What does the player want to do?
 prompt = input(
   "\nDo you want to: \n\n1: Play a Game. \n2: Quit (Coward!) \n\nEnter a Number: "
 )
+
+#screenis clearis
 os.system('clear')
 
 if prompt == '1':
@@ -49,12 +54,8 @@ print(
   '\nWelcome,', name,
   '\nOut of every all the adventurers in the land, you have been chosen to enter The Dungeon, and slay the horrible beast that has been terrorizing the people.'
 )
-time.sleep(5)
-print('\nYour quest begins...')
-time.sleep(3)
-print('NOW!')
-time.sleep(2)
-os.system('clear')
+#wait for the player's input
+input('Press ENTER to continue...')
 
 #define the kinds of rooms you can enter in this game.
 roomtypes = [
@@ -180,7 +181,8 @@ while room != totalrooms and health > 0:
     print('You attack', monstername, 'for', youdamage, 'damage.')
     #and how much damage they took.
     print(monstername, 'attacks You for', monsterdamage, 'damage.\n')
-    input('Press ENTER to continue... ')
+    #wait for the player's input
+    input('Press ENTER to continue...')
 
 
     #loop the battle until someone dies
@@ -218,11 +220,13 @@ while room != totalrooms and health > 0:
       #tell the player they got attacked.
       print(monstername, 'attacks You for', monsterdamage, 'damage.\n')
       #wait for the player's input
-      input('Press ENTER to continue.')
+      input('Press ENTER to continue...')
       #continue the loop, unless the monster is dead, then you can end the loop and let the player proceed.
       continue
     #You WIN, now let the player move on...
     print('\nVictory! You have defeated your foe.')
-    input('\nPress ENTER to continue.')
+    input('\nPress ENTER to continue...')
 
+#an ending.
+os.system('clear')
 print('Sorry, the horrible beast is on vacation rn, thanks for playing.')
